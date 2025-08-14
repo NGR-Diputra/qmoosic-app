@@ -1,9 +1,9 @@
 Flask
 Werkzeug
 numpy
-pandas
 cvxopt
 joblib
-librosa
+soundfile
 scipy
+
 
