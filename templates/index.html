@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Klasifikasi Mood Musik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>QMooSic</h1>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <input type="file" name="audio" id="audio-input" accept=".mp3" style="display: none;" required>
+            <button type="button" onclick="document.getElementById('audio-input').click()" class="upload-button">UPLOAD mp3 File</button>
+            
+            <div id="audio-player-container" style="display: none; margin-top: 20px;">
+                <p>mp3-file : <strong id="uploaded-file-name"></strong></p>
+                <audio controls id="audio-preview">
+                    Browser Anda tidak mendukung pemutar audio.
+                </audio>
+            </div>
+            
+            <button type="submit" class="predict-button" disabled>PREDICT MOOD</button>
+        </form>
+    </div>
+    <script>
+        const fileInput = document.getElementById('audio-input');
+        const predictButton = document.querySelector('.predict-button');
+        const audioPlayerContainer = document.getElementById('audio-player-container');
+        const uploadedFileName = document.getElementById('uploaded-file-name');
+        const audioPreview = document.getElementById('audio-preview');
+
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                const file = this.files[0];
+                predictButton.disabled = false;
+                
+                // Tampilkan audio player untuk preview
+                uploadedFileName.textContent = file.name;
+                audioPreview.src = URL.createObjectURL(file);
+                audioPlayerContainer.style.display = 'block';
+            } else {
+                predictButton.disabled = true;
+                audioPlayerContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quadrant Mood Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mood Prediction</h1>
+
+        <div class="result">
+            <p><strong>{{ prediction }}</strong></p>
+
+            <audio controls>
+                <source src="{{ url_for('static', filename='uploads/' + audio_filename) }}" type="audio/mpeg">
+                Browser Anda tidak mendukung pemutar audio.
+            </audio>
+
+            <div class="description">
+                <h3>Makna Kuadran Ini : </h3>
+                {% if pred_label == 0 %}
+                    <p><strong>Mood : Semangat dan Ceria 😊</strong><br>
+                    Musik berenergi tinggi dan membawakan kesaan yang positif, bersemangat, bahagia, dan ceria.</p>
+                {% elif pred_label == 1 %}
+                    <p><strong>Mood : Tegang dan Bergairah 😠</strong><br>
+                    Intensitas tinggi!! Bawaan musik ini tegang, penuh gairah, dan bergejolak. Tapi permainan musik serasa perasaan yang cukup negatif seperti amarah dan kesal.</p>
+                {% elif pred_label == 2 %}
+                    <p><strong>Mood : Santai namun Melankolis 😥</strong><br>
+                    Intensitas tergolong lambat dan pelan, musik ini cenderung membangkitkan perasaan sedih dan nostalgia.</p>
+                {% elif pred_label == 3 %}
+                    <p><strong>Mood : Tenang dan Damai 😌</strong><br>
+                    Musik tidak terlalu intens tapi menenangkan, bawaan musik berasa damai, tenang, kalem. Cocok untuk menemani hari yang santai,</p>
+                {% endif %}
+            </div>
+
+            <div class="quadrant-image">
+                <h3>Visualisasi Letak Mood</h3>
+                <img src="{{ url_for('static', filename='images/' + quadrant_image) }}" alt="Quadrant Mood Diagram">
+            </div>
+
+            <a href="/" class="back-button">Prediksi Mood Lain</a>
+        </div>
+    </div>
+</body>
+</html>
