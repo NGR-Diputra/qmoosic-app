@@ -2,11 +2,8 @@ Flask
 Werkzeug
 numpy
 pandas
-scikit-learn
 cvxopt
 joblib
 librosa
 scipy
-seaborn
-matplotlib
 
