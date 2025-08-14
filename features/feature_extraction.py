@@ -1,5 +1,5 @@
 import numpy as np
-import librosa
+import soundfile as sf
 from .functions import (
     fft,
     spectral_centroid, spectral_rolloff, spectral_spread, spectral_flatness,
@@ -13,7 +13,11 @@ def pre_emphasis(signal, alpha=0.97):
 
 def feature_extraction(file_path):
     # 1. Load file audio
-    y, sr = librosa.load(file_path, sr=None)
+    y, sr = sf.read(file_path)
+
+      # Jika stereo, ambil channel pertama
+    if y.ndim > 1:
+        y = y[:, 0]
 
     # 2. Pre-emphasis
     y = pre_emphasis(y)
@@ -83,3 +87,4 @@ def feature_extraction(file_path):
     features.extend(compute_statistics(np.array(roughness_per_frame)))
 
     return np.array(features).reshape(1, -1)
+
