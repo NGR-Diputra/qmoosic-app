@@ -11,5 +11,8 @@ waitress
 gunicorn
 pandas
 scikit-learn
+seaborn
+matplotlib
+
 
 
