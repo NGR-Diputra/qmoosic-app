@@ -6,5 +6,4 @@ joblib
 soundfile
 scipy
 pydub
-
-
+audioread
