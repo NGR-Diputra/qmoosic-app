@@ -9,3 +9,5 @@ pydub
 audioread
 waitress
 gunicorn
+pandas
+
