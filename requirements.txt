@@ -10,9 +10,10 @@ audioread
 waitress
 gunicorn
 pandas
-scikit-learn==1.2.2
+scikit-learn
 seaborn
 matplotlib
+
 
 
 
