@@ -1,2 +1,3 @@
-# qmoosic-app
-Aplikasi QMooSic adalah aplikasi berbasis web yang dibangun menggunakan python melalui flask. Aplikasi akan mengklasifikasikan mood kuadran dari file musik yang diunggah pengguna sebagai bentuk klasifikasi mood musik tersebut. Dijelaskan dalam bentuk  kuadran untuk memudahkan generalisir terhadap persepsi kita terhadap mood yang sifatnya subjektif.
+**# QMooSic-app**
+
+QMooSic is a web-based application built with Python using the Flask framework. The application classifies the mood in quadrants of a music samples uploaded by the user. It presents the mood classification in the 4 quadrants circumplex model by Russell (1980) to help generalize the subjectivity perception of mood categories in music.
