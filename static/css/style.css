@@ -1,14 +1,12 @@
-/* ============================
-   DARK MODE STYLE - QMooSic
-   ============================ */
 :root {
-    --primary-color: #1e90ff;     /* Biru terang untuk tombol */
-    --secondary-color: #00ff7f;   /* Hijau neon untuk hover */
-    --background-color: #000000;  /* Hitam pekat */
-    --text-color: #ffffff;        /* Putih */
+    --primary-color: #1e90ff;    
+    --secondary-color: #00ff7f;   
+    --background-color: #000000; 
+    --text-color: #ffffff;        
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Default body (index.html) */
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -16,9 +14,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full 1 halaman */
+    height: 100vh; /* Full layar, tanpa scroll */
     margin: 0;
     font-size: 18px;
+}
+
+/* Body khusus untuk halaman hasil (result.html) */
+body.result-page {
+    display: block;         /* Supaya layout normal */
+    height: auto;           /* Biarkan menyesuaikan isi */
+    padding: 40px 20px;     /* Tambah jarak */
+    overflow-y: auto;       /* Scroll kalau konten panjang */
 }
 
 .container {
@@ -26,6 +32,7 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 40px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -36,7 +43,7 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* --- Form Upload --- */
+/* --- Form Upload (index.html) --- */
 form {
     display: flex;
     flex-direction: column;
@@ -133,8 +140,14 @@ h2 {
     line-height: 1.8;
 }
 
+/* --- Quadrant Image --- */
 .quadrant-image {
     margin-top: 35px;
+}
+
+.quadrant-image h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
 }
 
 .quadrant-image img {
