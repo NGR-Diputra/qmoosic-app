@@ -4,7 +4,7 @@
     <title>Quadrant Mood Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
+<body class="result-page">
     <div class="container">
         <h1>Mood Prediction</h1>
 
@@ -17,7 +17,7 @@
             </audio>
 
             <div class="description">
-                <h3>Makna Kuadran Ini : </h3>
+                <h3>Makna Kuadran Ini :</h3>
                 {% if pred_label == 0 %}
                     <p><strong>Mood : Semangat dan Ceria 😊</strong><br>
                     Musik berenergi tinggi dan membawakan kesaan yang positif, bersemangat, bahagia, dan ceria.</p>
