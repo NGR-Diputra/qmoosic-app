@@ -35,7 +35,8 @@
 
             <div class="quadrant-image">
                 <h3>Visualisasi Letak Mood</h3>
-                <img src="{{ url_for('static', filename='images/' + quadrant_image) }}" alt="Quadrant Mood Diagram">
+                <img src="{{ url_for('static', filename='images/' ~ quadrant_image) }}" alt="Quadrant Mood Diagram">
+
             </div>
 
             <a href="/" class="back-button">Prediksi Mood Lain</a>
@@ -43,3 +44,4 @@
     </div>
 </body>
 </html>
+
